@@ -170,11 +170,12 @@
                                                                        th:name="password">
                                                             </div>
 
-                                                            <label for="roles1"><b>Role</b></label>
+                                                            <label for="roles1"><b>Role:</b></label>
                                                             <select multiple class="form-control form-control-sm"
                                                                     id="roles1" th:name="listRoles" size="2" required>
                                                                 <option th:each="role: ${roles}"
                                                                         th:name="*{roles}"
+                                                                        th:selected="${user.getRoles().contains(role)}"
                                                                         th:text="${role.name}" th:value="${role.id}"
                                                                         class="m-2"/>
                                                                 </th:block>
